@@ -1,0 +1,33 @@
+<table class="table table-hover">
+  		<thead>
+  			<th>Professor</th>
+  			<th>Aluno</th>
+  			<th>Disciplina</th>
+  			<th>Plano de Ensino</th>
+  			
+            <th class="text-center">Editar</th>
+  			<th class="text-center">Excluir</th>
+  		</thead>
+
+  		<tbody>
+  			{% for turma in object_list %}
+				<tr>
+					<td>{{ turma.professor }}</td>
+					<td>
+                        {% for c in turma.aluno.all %}
+								{{ c }}
+								{% if forloop.last %}
+								.
+								{% else %}
+								,
+								{% endif %}
+							{% empty %}
+								<i>Nenhum aluno informado</i>
+							{% endfor %}
+                    </td>
+                    <td>{{ turma.disciplina }}</td>
+                    <td>{{ turma.plano_ensino }}</td>					
+				</tr>
+			{% endfor %}
+  		</tbody>
+	</table>
