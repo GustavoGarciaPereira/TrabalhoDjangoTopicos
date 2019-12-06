@@ -5,6 +5,12 @@ from django.http import HttpResponse
 from django.views.generic import CreateView,ListView
 from .models import Aluno,Professor, Turma
 
+
+from django.views.generic import TemplateView
+
+class Home(TemplateView):
+    template_name = "home/home.html"
+
 class TurmaCreate(CreateView):
     model = Turma
     template_name = 'turma/turma_form.html'

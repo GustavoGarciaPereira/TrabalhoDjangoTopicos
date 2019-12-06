@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
-from .views import AlunoCreate,AlunoList,ProfessorCreate,ProfessorList,TurmaCreate,TurmaList
+from .views import AlunoCreate,AlunoList,ProfessorCreate,ProfessorList,TurmaCreate,TurmaList,Home
 urlpatterns = [
     path('cadastrar_aluno', AlunoCreate.as_view(), name='cadastrar_Aluno'),
     path('listar_aluno', AlunoList.as_view(), name='listar_Aluno'),
@@ -24,5 +24,7 @@ urlpatterns = [
     path('listar_professor', ProfessorList.as_view(), name='listar_Professor'),
     path('cadastrar_turma', TurmaCreate.as_view(), name='cadastrar_turma'),
     path('listar_turma', TurmaList.as_view(), name='listar_turma'),
+    path('', Home.as_view(), name='home'),
+    
     
 ]
