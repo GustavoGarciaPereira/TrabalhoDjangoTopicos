@@ -13,15 +13,27 @@
 				<thead>
 					<th>Nome</th>
 					<th>Email</th>
-					<th class="text-center">Editar</th>
-					<th class="text-center">Excluir</th>
+					<th class="">Editar</th>
+					<th class="">Excluir</th>
 				</thead>
 	  
 				<tbody>
 					{% for professor in object_list %}
 					  <tr>
 						  <td>{{ professor.nome }}</td>
-						  <td>{{ professor.email }}</td>					
+						  <td>{{ professor.email }}</td>
+						  <td>
+							
+							<a href="/agenda/alterar_professor/{{ professor.pk }}/" class="btn btn-primary" aria-disabled="true">
+								Editar
+							</a>
+						  </td>	
+						  <td>
+												
+							<a href="/agenda/deletar_professor/{{ professor.pk }}/" class="btn btn-primary" aria-disabled="true">
+								Excluir
+							</a>
+						  </td>				
 					  </tr>
 				  {% endfor %}
 				</tbody>

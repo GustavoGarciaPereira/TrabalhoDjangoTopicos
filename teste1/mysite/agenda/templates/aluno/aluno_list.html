@@ -16,8 +16,8 @@
 								<th>Nome</th>
 								<th>Matricula</th>
 								<th>Nota</th>
-								<th class="text-center">Editar</th>
-								<th class="text-center">Excluir</th>
+								<th class="">Editar</th>
+								<th class="">Excluir</th>
 							</thead>
 				  
 							<tbody>
@@ -26,6 +26,18 @@
 									  <td>{{ aluno.nome }}</td>
 									  <td>{{ aluno.matricula }}</td>
 									  <td>{{ aluno.nota }}</td>
+									  <td>
+							
+										<a href="/agenda/alterar_aluno/{{ aluno.pk }}/" class="btn btn-primary" aria-disabled="true">
+											Editar
+										</a>
+									  </td>	
+									  <td>
+															
+										<a href="/agenda/deletar_aluno/{{ aluno.pk }}/" class="btn btn-primary" aria-disabled="true">
+											Excluir
+										</a>
+									  </td>
 									  
 								  </tr>
 							  {% endfor %}

@@ -35,7 +35,19 @@
 						  {% endfor %}
 				  </td>
 				  <td>{{ turma.disciplina }}</td>
-				  <td>{{ turma.plano_ensino }}</td>					
+				  <td>{{ turma.plano_ensino }}</td>
+				  <td>
+							
+					<a href="/agenda/alterar_turma/{{ turma.pk }}/" class="btn btn-primary" aria-disabled="true">
+						Editar
+					</a>
+				  </td>	
+				  <td>
+										
+					<a href="/agenda/deletar_turma/{{ turma.pk }}/" class="btn btn-primary" aria-disabled="true">
+						Excluir
+					</a>
+				  </td>				
 			  </tr>
 		  {% endfor %}
 		</tbody>
